@@ -10,6 +10,7 @@ import { PrometheusQueryResultsContainer } from 'app/features/explore/RawPrometh
 import { NotebookViewLazy } from 'app/features/notebook/embed/NotebookViewLazy';
 import { AddToNotebookFormExposedComponent } from 'app/features/notebook/extensions/AddToNotebookFormExposedComponent';
 import { LazyManagedBadge } from 'app/features/provisioning/components/LazyManagedBadge';
+import { LazyRepositorySelect } from 'app/features/provisioning/components/Shared/LazyRepositorySelect';
 import { SaveResourceDrawerExposedComponent } from 'app/features/provisioning/components/Shared/SaveResourceDrawerExposedComponent';
 
 import { getCoreExtensionConfigurations } from '../getCoreExtensionConfigurations';
@@ -56,6 +57,12 @@ function registerCoreExtensions({ addedLinksRegistry, exposedComponentsRegistry 
         title: 'Managed badge',
         description: 'Shows which system manages a resource, with Git Sync repository links',
         component: LazyManagedBadge,
+      },
+      {
+        id: PluginExtensionExposedComponents.RepositorySelectV1,
+        title: 'Repository select',
+        description: 'Selects the Git Sync repository for a new resource of a kind outside folders',
+        component: LazyRepositorySelect,
       },
       {
         id: PluginExtensionExposedComponents.PrometheusQueryResultsV1,
